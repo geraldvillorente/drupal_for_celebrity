@@ -1,0 +1,189 @@
+// VARIABLES
+
+$c2: #000;
+$c1: #fff;
+$menu-font: 'sackers-gothic';
+$title-font: 'great-vibes';
+$body-font: 'gara-italic';
+$web-font: 'a-sans';
+$banner-font: 'gara-thin';
+$i: !important;
+$t: transparent;
+
+// MIXINS
+
+@mixin font-family($ff: $menu-font, $fs: 1em, $fw: normal $i, $fc: $c2){
+	font-family: $ff;
+	font-size: $fs;
+	font-weight: $fw;
+	color: $fc $i;
+}
+
+// GLOBAL CSS
+
+@font-face {
+  font-family: $menu-font;
+  src: url('../fonts/ATSackersGothic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: $body-font;
+  src: url('../fonts/GARAIT.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: $title-font;
+  src: url('../fonts/great-vibes.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: $web-font;
+  src: url('../fonts/ASans.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: $banner-font;
+  src: url('../fonts/ATSackersThin.otf') format('opentype');
+}
+
+body{
+	@include font-family($web-font, 14px, normal, $c2);
+}
+
+// BACKGROUND
+
+body{
+	background: $c1;
+
+	.page-background {
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	  background-attachment: fixed; 
+	  top: 0; 
+	  min-width: 100%;
+	  min-height: 100%;
+	}
+	.l-header{
+		
+		#main-menu{
+			
+			li{
+				
+				a{
+					@include font-family($menu-font, 12px);
+					color: $c2;
+                    text-transform: lowercase;
+				}
+			}
+		}
+		
+		.top-bar {
+			background: $t $i;
+            margin: 4em 6em;
+            position: absolute;
+			z-index: 999;
+			width: 90% $i;
+			top: 0px;
+
+			.top-bar-section{
+				
+				ul{
+					background: $t $i;
+
+					li {
+
+						a {
+						background: $t $i;
+						}
+					}
+				}
+                
+                .dropdown {
+                    border: 1px solid $c2;
+                    left: -60px $i;
+                    text-align: center;    
+                }
+
+                .dropdown:after {
+					content: ' ';
+					height: 0;
+					position: absolute;
+					width: 0;
+					border-left: 5px solid $t;
+					border-right: 5px solid $t;							
+					border-bottom: 5px solid black;
+					border-top-color: #333;
+					bottom: 100%;
+					left: 50%;
+				}
+		
+				.has-dropdown > a:after {
+					display: none $i;
+				}
+			}
+		}
+		
+	}	
+
+	.l-featured {
+		position: absolute;
+		top: 18em;
+		width: 30%;
+		text-align: center;
+		left: 10em;
+
+		.view-content {
+
+			.field-content {
+				width: 100%;
+
+				a {
+					@include font-family($banner-font, 15px);
+					color: $c2;
+					text-transform: lowercase;
+					&:after{
+						content: "___________";
+						font-size: 16px;
+						position: absolute;
+						left: 140px;
+						top: 7px;
+					}	 
+				}
+
+				p{
+					@include font-family($body-font, 30px);
+					color: $c2;
+					top: 25px;
+					position: relative;
+				}
+
+			}
+
+			.view-homepage {
+				width: 40%;
+				text-align: center;
+				padding: 10px;
+				top: 34%;
+				left: 25%;
+
+				
+				
+			}
+		}
+	}
+
+	.title-area{
+
+		.name{
+				
+			h1{
+				@include font-family($title-font, 45px);
+
+				a {
+					color: $c2 $i;
+                    font-weight: normal;
+				}
+			}
+		}
+	}
+}
