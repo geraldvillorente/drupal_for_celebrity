@@ -1,0 +1,311 @@
+// VARIABLES
+
+$c2: #000;
+$c1: #fff;
+$menu-font: 'sackers-gothic';
+$title-font: 'great-vibes';
+$body-font: 'gara-italic';
+$web-font: 'a-sans';
+$banner-font: 'gara-thin';
+$main-title-font : 'gara-mond';
+$i: !important;
+$t: transparent;
+
+// MIXINS
+
+@mixin font-family($ff: $menu-font, $fs: 1em, $fw: normal $i, $fc: $c2){
+	font-family: $ff;
+	font-size: $fs;
+	font-weight: $fw;
+	color: $fc $i;
+}
+
+// GLOBAL CSS
+
+@font-face {
+  font-family: $menu-font;
+  src: url('../fonts/ATSackersGothic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: $body-font;
+  src: url('../fonts/GARAIT.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: $main-title-font;
+  src: url('../fonts/GARA.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: $title-font;
+  src: url('../fonts/great-vibes.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: $web-font;
+  src: url('../fonts/ASansreg.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: $banner-font;
+  src: url('../fonts/ATSackersThin.otf') format('opentype');
+}
+
+body{
+	@include font-family($web-font, 14px, normal, $c2);
+}
+
+// BACKGROUND
+
+body{
+	background: $c1;
+
+
+	.page-background {
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	  background-attachment: fixed; 
+	  top: 0; 
+	  min-width: 100%;
+	  min-height: 100%;
+	  margin-bottom: 40px;
+	}
+	.l-header{
+		
+		#main-menu{
+			
+			li{
+				
+				a{
+					@include font-family($menu-font, 12px);
+					color: $c2;
+                    text-transform: lowercase;
+				}
+			}
+		}
+		.test {
+		    position: fixed;
+		    background: none repeat scroll 0% 0% #000;
+		    z-index: 99999;
+		    width: 100%;
+		    height: 50px;
+		    margin-top: 0px;
+		    display: none;
+		}
+
+		.open{
+			margin-top: -8px $i;
+			background: $c1 $i;
+			height: 63px;
+			width: 100% $i;
+			margin: 0px $i;
+			padding-top: 10px;
+		}
+
+		.top-bar {
+			background: $t;
+            margin: 4em 6em;
+            position: absolute;
+			z-index: 999;
+			width: 90%;
+			top: 0px;
+
+			.top-bar-section{
+				
+				ul{
+					background: $t $i;
+
+					li {
+
+						a {
+						background: $t;
+						}
+					}
+				}
+                
+                .dropdown {
+                    border: 1px solid $c2;
+                    left: -60px $i;
+                    text-align: center;    
+                }
+
+                .dropdown:after {
+					content: ' ';
+					height: 0;
+					position: absolute;
+					width: 0;
+					border-left: 5px solid $t;
+					border-right: 5px solid $t;							
+					border-bottom: 5px solid black;
+					border-top-color: #333;
+					bottom: 100%;
+					left: 50%;
+				}
+		
+				.has-dropdown > a:after {
+					display: none $i;
+				}
+			}
+		}
+		
+	}	
+
+	.l-featured {
+		position: absolute;
+		top: 18em;
+		width: 30%;
+		text-align: center;
+		left: 10em;
+
+		.view-content {
+
+			.field-content {
+				width: 100%;
+
+				a {
+					@include font-family($banner-font, 15px);
+					color: $c2;
+					text-transform: lowercase;
+					&:after{
+						content: "___________";
+						font-size: 16px;
+						position: absolute;
+						left: 140px;
+						top: 7px;
+					}	 
+				}
+
+				p{
+					@include font-family($body-font, 30px);
+					color: $c2;
+					top: 25px;
+					position: relative;
+				}
+
+			}
+
+			.view-homepage {
+				width: 40%;
+				text-align: center;
+				padding: 10px;
+				top: 34%;
+				left: 25%;
+
+				
+				
+			}
+		}
+	}
+
+	.main {
+		 text-align: center;
+
+		.views-field{
+			padding: 10px;
+		}
+
+		.views-field-term-node-tid {
+
+			a {
+				@include font-family($web-font, 11px , $c2 $i );
+				font-weight: bold;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+		}
+
+		.views-field-title {
+
+			a {
+				@include font-family($main-title-font, 1.9em , $c2 $i );
+				text-transform: uppercase;
+				font-weight: normal;
+
+			}
+		}
+
+		.views-field-created{
+
+			span{
+				letter-spacing: 1px;
+			}
+		}
+		.views-field-body{
+
+			p{
+				@include font-family($web-font, 1.2em);
+			}
+		}
+		.views-field-view-node{
+
+			a{
+				@include font-family($web-font, 0.8em , $c2 $i );
+				text-transform: uppercase;
+				font-weight: normal;
+				letter-spacing: 1px;
+			}
+
+			:before{
+				content: url('../images/divder.jpg');
+				z-index:100000; /*a number that's more than the modal box*/
+			    left:-50px;
+			    top:10px;
+			}
+		}
+	}
+	.sidebar-second {
+			
+		.block{
+			width: 350px;
+			text-align: center;
+			border: 1px solid #000;
+			margin-bottom: -1px;
+		}
+		.block-views{
+
+			.block-title:after{
+				content: "_____";
+				font-size: 19px;
+				position: absolute;
+				left: 149px;
+				top: 45px;
+				font-family: $body-font;
+				letter-spacing: 0px;
+			}
+		}
+		.block-title{
+			@include font-family($main-title-font, 1.2em);
+			text-transform: uppercase;
+			margin: 40px 0px 10px;
+			letter-spacing: 1px;
+			font-size: 1.1em;
+		}
+
+		.views-field-body{
+
+			.field-content{
+
+				p{
+					margin: 20px 20px;
+					padding: 10px;
+				}
+			}
+		}
+	}
+
+	.title-area{
+
+		.name{
+				
+			h1{
+				@include font-family($title-font, 45px);
+
+				a {
+					color: $c2 $i;
+                    font-weight: normal;
+				}
+			}
+		}
+	}
+}
