@@ -20,13 +20,18 @@
     
           }
         })
+
+       //Popular Article Effect
+
+       $(".post-article img").hover( function(){
+            $(this).find(".views-field-title, .views-field-created").show();
+            $(".views-field-title, .views-field-created").addClass('container');
+          },
+          function(){
+               $(this).find(".views-field-title, .views-field-created").hide();
+          });
     
     }
   };
 
 })(jQuery);
-
-$(function()
-{
-
-})
