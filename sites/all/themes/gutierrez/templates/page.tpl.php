@@ -163,15 +163,108 @@
   </main>
   <!--/.main-->
 
-<!-- Popular Post -->
- <?php if (!empty($page['popular_post'])): ?>
- <div class="row large-12">
-   <div class="post-article">
-      <?php print render($page['popular_post']); ?>
-   </div>
- </div>
+  <?php if (!empty($page['gmap'])): ?>
+    <div class="large-12">
+      <?php print render($page['gmap']); ?>
+    </div>
  <?php endif; ?>
-  <!-- /.post ->
+
+<!-- Popular Post -->
+ <div class="row post-article-container">
+    <h1>Popular Articles</h1>
+    <div class="row large-9 post-article">
+        <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/0.jpg');">
+            <div class="hover-content">
+              <div class="hover-content-cat">
+                  <span>Lorem</span><hr class="line">
+                </div>
+                <div class="hover-content-title column">
+                  <h1> Lorem</h1>
+                </div>
+                <div class="hover-content-date">
+                  <span>Jan. 25, 2015</span>
+                </div>
+            </div>
+        </div>
+        <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/1.jpg');">
+            <div class="hover-content">
+                <div class="hover-content-cat">
+                  <span> Lorem</span><hr class="line">
+                </div>
+                <div class="hover-content-title column">
+                  <h1> Lorem</h1>
+                </div>
+                <div class="hover-content-date">
+                  <span>Jan. 25, 2015</span>
+                </div>
+            </div>
+        </div>
+        <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/2.jpg');">
+                <div class="hover-content">
+                  <div class="hover-content-cat">
+                    <span>Lorem</span><hr class="line">
+                  </div>
+                  <div class="hover-content-title column">
+                    <h1>Lorem Ipsum delta asas as</h1>
+                  </div>
+                  <div class="hover-content-date">
+                    <span>Jan. 25, 2015</span>
+                  </div>
+            </div>
+        </div>
+        <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/3.jpg');">
+                <div class="hover-content">
+                  <div class="hover-content-cat">
+                    <span> Lorem</span><hr class="line">
+                  </div>
+                  <div class="hover-content-title column">
+                    <h1> Lorem</h1>
+                  </div>
+                  <div class="hover-content-date">
+                    <span>Jan. 25, 2015</span>
+                  </div>
+            </div>
+        </div>
+        <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/4.jpg');">
+          <div class="hover-content">
+            <div class="hover-content-cat">
+              <span>Lorem 1<span><hr class="line">
+            </div>
+            <div class="hover-content-title column">
+              <h1>Lorem Ipsum delta asas as </h1>
+            </div>
+            <div class="hover-content-date">
+              <span>Jan. 25, 2015</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/5.jpg');">
+          <div class="hover-content">
+            <div class="hover-content-cat">
+                  <span>Lorem </span><hr class="line">
+                </div>
+            <div class="hover-content-title column">
+              <h1> Lorem Ipsum delta asas as</h1>
+            </div>
+            <div class="hover-content-date">
+              <span>Jan. 25, 2015</span>
+            </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  <!-- /.post -->
+  <?php if (!empty($page['sub_menu'])): ?>
+    <div class="row large-12 sub-menu">
+      <?php print render($page['sub_menu']); ?>
+    </div>
+ <?php endif; ?>
+
+ <?php if (!empty($page['footer_social'])): ?>
+    <div class="row large-12">
+      <?php print render($page['footer_social']); ?>
+    </div>
+ <?php endif; ?>
 
   <?php if (!empty($page['triptych_first']) || !empty($page['triptych_middle']) || !empty($page['triptych_last'])): ?>
     <!--.triptych-->
@@ -217,18 +310,21 @@
   <?php endif; ?>
 
   <!--.l-footer-->
-  <footer class="l-footer panel row" role="contentinfo">
-    <?php if (!empty($page['footer'])): ?>
+  <footer class="row l-footer panel" role="contentinfo">
+   <!--  <?php if (!empty($page['footer'])): ?>
       <div class="footer large-12 columns">
         <?php print render($page['footer']); ?>
       </div>
-    <?php endif; ?>
+    <?php endif; ?> -->
 
     <?php if ($site_name) :?>
-      <div class="copyright large-12 columns">
-        &copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?>
+      <div class="copyright large-6 left">
+        &copy; <?php print t('All rights reserved.'). ' ' . date('Y') . ' ' . check_plain($site_name); ?>
       </div>
     <?php endif; ?>
+    <div class="developer large-6 right">
+        Developed & Designed By Globaledge Media Solutions Inc.
+      </div>
   </footer>
   <!--/.footer-->
 

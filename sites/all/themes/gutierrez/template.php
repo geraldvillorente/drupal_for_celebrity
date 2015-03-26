@@ -17,6 +17,8 @@
  *
  */
 function gutierrez_preprocess_page(&$variables) {
+  $variable['base_path'] =drupal_get_path('theme', 'gutierrez');
+ 
   drupal_add_js(drupal_get_path('theme', 'gutierrez') . '/js/index.js', array('scope' => 'footer'));
   if (drupal_is_front_page()) {
     $featured_view = 'homepage';
@@ -37,6 +39,8 @@ function gutierrez_preprocess_page(&$variables) {
     }
   }
 }
+
+
 
 /**
  * Implements template_preprocess_node

@@ -20,6 +20,13 @@ $t: transparent;
 	color: $fc $i;
 }
 
+@mixin transition($time: 500ms, $transition: ease-in, $property: all){
+	transition: $property $time $transition;
+	-webkit-transition: $property $time $transition;
+	-o-transition: $property $time $transition;
+	-moz-transition: $property $time $transition;
+}
+
 // GLOBAL CSS
 
 @font-face {
@@ -54,6 +61,7 @@ $t: transparent;
 
 body{
 	@include font-family($web-font, 14px, normal, $c2);
+	letter-spacing: 1px;
 }
 
 // BACKGROUND
@@ -167,12 +175,14 @@ body{
 					@include font-family($banner-font, 15px);
 					color: $c2;
 					text-transform: lowercase;
+
 					&:after{
 						content: "___________";
 						font-size: 16px;
 						position: absolute;
 						left: 140px;
-						top: 7px;
+						top: 30px;
+						letter-spacing: 0px;
 					}	 
 				}
 
@@ -246,7 +256,7 @@ body{
 				letter-spacing: 1px;
 			}
 
-			:before{
+			&:before{
 				content: url('../images/divder.jpg');
 				z-index:100000; /*a number that's more than the modal box*/
 			    left:-50px;
@@ -264,22 +274,23 @@ body{
 		}
 		.block-views{
 
-			.block-title:after{
-				content: "_____";
-				font-size: 19px;
-				position: absolute;
-				left: 149px;
-				top: 45px;
-				font-family: $body-font;
-				letter-spacing: 0px;
-			}
+			
 		}
 		.block-title{
 			@include font-family($main-title-font, 1.2em);
-			text-transform: uppercase;
-			margin: 40px 0px 10px;
-			letter-spacing: 1px;
-			font-size: 1.1em;
+				text-transform: uppercase;
+				margin: 40px 0px 10px;
+				letter-spacing: 1px;
+				font-size: 1.1em;
+
+			&:after{
+				content: "_____";
+				font-size: 19px;
+				position: absolute;
+				left: 161px;
+				font-family: $body-font;
+				letter-spacing: 0px;
+			}
 		}
 
 		.views-field-body{
@@ -289,42 +300,138 @@ body{
 				p{
 					margin: 20px 20px;
 					padding: 10px;
+					letter-spacing: 1px;
 				}
 			}
 		}
-	}
-	.post-article {
-			text-align: center;
 
-		.container {
-			background: $c2;
-			color: $c1;
+		.social{
+			padding-bottom: 15px;
+			margin-top: 15px;
+
+			.icon{
+				padding-bottom: 15px;
+
+				img {
+					width: 25px;
+					height: 25px;
+				}
+			}
+			a {
+				color: $c2 $i;
+			}
 		}
-		.views-field-title {
-			position: absolute;
-			left:0px;
-			display: none;
+	}
+	
+	.post-article-container{
+		margin-bottom: 40px;
+
+		h1{
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: normal;
+			@include font-family($main-title-font, 1.9em , $c2 $i );
 		}
-		.views-field-created{
-			position: absolute;
-			top:10px;
-			display: none;
-		}
-		.views-field-term-node-tid{
-			position: absolute;
-			top:10px;
-			display: none;
-		}
-		.views-field{
-			float: left;
-			img {
-				width: 300px;
+
+		.post-article {
+				text-align: center;
+				margin: 0px 10em $i;
+				height: 200px;
+			
+			.hover-container{
+				background-size: cover $i;
+				height: inherit;
+				background-position: center center;
+				padding-left: 0px;
+				padding-right: 0px;
+
+				.hover-content{
+					height: inherit;
+					background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.65);
+					opacity: 0;
+					@include transition(200ms);
+
+					&:hover{
+						opacity: 1;
+					}
+
+					.hover-content-cat{
+						padding-top: 3em;
+
+						span{
+							@include font-family($banner-font, 0.8em);
+							text-transform: uppercase;
+
+						}
+						.line{
+							color: #333 $i;
+							background-color: #9E9E9E;
+							height: 3px;
+							width: 28px;
+							left: 6em;
+							position: relative;
+							top: -10px;
+							border: 0px;
+						}
+					}
+
+					.hover-content-title{
+							height: 70px;
+							position: relative;
+							margin-top: -15px;
+
+						h1{
+							@include font-family($web-font, 1.1em);
+							text-transform: uppercase;
+							letter-spacing: 1px;
+
+						}
+					}
+					.hover-content-date{
+
+						span{
+							@include font-family($web-font, 0.9em);
+							letter-spacing: 2px;
+						}
+					}
+				}
+
+			}
+
+			.container {
+				background: $c2;
+				color: $c1;
+			}
+			.views-field-title {
+				position: absolute;
+				left:0px;
+				display: none;
+			}
+			.views-field-created{
+				position: absolute;
+				top:10px;
+				display: none;
+			}
+			.views-field-term-node-tid{
+				position: absolute;
+				top:10px;
+				display: none;
+			}
+			.views-field{
+				float: left;
+				img {
+					width: 300px;
+					
+				}
 				
 			}
-			
+
+
 		}
+	}
 
-
+	.sub-menu {
+		border-bottom: 1px solid rgba(155, 155, 155, 0.92);
 	}
 
 	.title-area{
@@ -341,4 +448,68 @@ body{
 			}
 		}
 	}
+	.page {
+
+		section{
+			margin-left: auto;
+			margin-right: auto;
+
+			.menu{
+				list-style: outside none none;
+				display: inline;
+				text-align: center;
+				margin: 0px;
+				padding: 0px;
+				width: 90%;
+				overflow: hidden;
+
+					li {
+						padding: 2px;
+						float: left;
+						width: 90px;
+						margin-left: auto;
+						margin-right: auto;
+
+
+						&:first-child{
+							margin-left: 9em;
+						}
+
+						a {
+							@include font-family($menu-font, 11px , $c2);
+							text-transform: uppercase;
+						}
+					}
+
+				.menu{
+
+					.leaf {
+						display: none;
+
+					}
+				}
+			}
+		}
+	}
+
+	.panel{
+		border: none;
+		background: $t;
+		margin-bottom: 10px;
+		padding-right: 0px;
+		padding-left: 0px;
+
+		.copyright{
+			@include font-family($menu-font, 8px , $c2);
+			text-transform: uppercase;
+			padding-left: 0px;
+		}
+		.developer{
+			@include font-family($menu-font, 8px , $c2);
+			text-transform: uppercase;
+			text-align: right;
+			padding-right: 0px;
+		}
+	}
 }
+
