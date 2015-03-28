@@ -293,6 +293,39 @@ body{
 			}
 		}
 	}
+	.post-article {
+			text-align: center;
+
+		.container {
+			background: $c2;
+			color: $c1;
+		}
+		.views-field-title {
+			position: absolute;
+			left:0px;
+			display: none;
+		}
+		.views-field-created{
+			position: absolute;
+			top:10px;
+			display: none;
+		}
+		.views-field-term-node-tid{
+			position: absolute;
+			top:10px;
+			display: none;
+		}
+		.views-field{
+			float: left;
+			img {
+				width: 300px;
+				
+			}
+			
+		}
+
+
+	}
 
 	.title-area{
 

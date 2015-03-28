@@ -166,7 +166,9 @@
 <!-- Popular Post -->
  <?php if (!empty($page['popular_post'])): ?>
  <div class="row large-12">
- <?php print render($page['popular_post']); ?>
+   <div class="post-article">
+      <?php print render($page['popular_post']); ?>
+   </div>
  </div>
  <?php endif; ?>
   <!-- /.post ->

@@ -4,15 +4,6 @@
     attach: function (context, settings) {
 
       $('.page-background', context).css('height', $(window).height());
-    //   $(window).scroll(function () {
-  		// if ( $(this).scrollTop() > 200 && !$('nav').hasClass('open') ) {
-    // 	  $('nav').addClass('open');
-   	// 	  $('nav').slideDown();
-   	// 	} else if ( $(this).scrollTop() <= 200 ) {
-   	// 	  $('nav').removeClass('open');
-    // 	  $('nav').slideUp();
-    //     }
-    //   });
        $(document).scroll(function()
         {
           var scroll = $(this).scrollTop();
@@ -29,13 +20,18 @@
     
           }
         })
+
+       //Popular Article Effect
+
+       $(".post-article img").hover( function(){
+            $(this).find(".views-field-title, .views-field-created").show();
+            $(".views-field-title, .views-field-created").addClass('container');
+          },
+          function(){
+               $(this).find(".views-field-title, .views-field-created").hide();
+          });
     
     }
   };
 
 })(jQuery);
-
-$(function()
-{
-
-})
