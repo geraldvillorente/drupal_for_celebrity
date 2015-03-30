@@ -9,7 +9,7 @@
           var scroll = $(this).scrollTop();
           // console.log(scroll);
           if(scroll >= 550){
-            $(".test").show();
+            $(".test").slideDown();
             $(".top-bar").css({"position": "fixed"});
             $(".top-bar").addClass('open')
             
@@ -30,6 +30,23 @@
           function(){
                $(this).find(".views-field-title, .views-field-created").hide();
           });
+
+       //Add Div Slicer
+
+       $('.views-row').after('<div class="slicer"></div>');
+
+       $('.block-title').after('<center><div class="liner"></div></center>');
+
+
+       $('.l-main').after('<div class="row large-12"><div class="slicer-full"></div></div>');
+       //Add Twitter Icons
+
+       $('.main .views-field-tweets').prepend('<span><img src="/sites/all/themes/gutierrez/images/twit.png"</span>');
+
+       //Add Facebook Icons
+
+       $('.main .views-field-fb-likes').prepend('<span><img src="/sites/all/themes/gutierrez/images/fb.png"</span>');
+
     
     }
   };
