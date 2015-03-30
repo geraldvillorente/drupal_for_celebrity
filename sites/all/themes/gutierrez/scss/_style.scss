@@ -95,7 +95,7 @@ body{
 		.test {
 		    position: fixed;
 		    background: none repeat scroll 0% 0% #000;
-		    z-index: 99999;
+		    z-index: 9;
 		    width: 100%;
 		    height: 50px;
 		    margin-top: 0px;
@@ -109,6 +109,7 @@ body{
 			width: 100% $i;
 			margin: 0px $i;
 			padding-top: 10px;
+			max-width: 100% $i;
 		}
 
 		.top-bar {
@@ -116,7 +117,7 @@ body{
             margin: 4em 6em;
             position: absolute;
 			z-index: 999;
-			width: 90%;
+			width: 80%;
 			top: 0px;
 
 			.top-bar-section{
@@ -192,7 +193,6 @@ body{
 					top: 25px;
 					position: relative;
 				}
-
 			}
 
 			.view-homepage {
@@ -210,6 +210,10 @@ body{
 
 	.main {
 		 text-align: center;
+		
+		.views-row{
+			margin-bottom: 50px;
+		}
 
 		.views-field{
 			padding: 10px;
@@ -255,15 +259,85 @@ body{
 				font-weight: normal;
 				letter-spacing: 1px;
 			}
+		}
 
-			&:before{
-				content: url('../images/divder.jpg');
-				z-index:100000; /*a number that's more than the modal box*/
-			    left:-50px;
-			    top:10px;
+		.views-field-tweets{
+			float: left;
+			width: 20%;
+
+			span{
+				margin-left: 15px;
+
+				img {
+					width: 15px;
+					height: 15px;
+				}
 			}
 		}
+
+		.views-field-fb-likes{
+			width: 15%;
+			float: left;
+			margin-left: 130px;
+
+			span{
+				margin-left: 15px;
+
+				img {
+					width: 15px;
+					height: 15px;
+				}
+			}
+		}
+
+		.views-field-disqus-comment-count{
+			width: 25%;
+			float: left;
+
+				a {
+					color: $c2;
+				}
+		}
+
+		.slicer {
+			background: url("../images/divder.jpg");
+			width: 100%;
+			top: 0px;
+			height: 21px;
+			position: relative;
+			margin-bottom: 30px;	
+
+			&:last-child{
+				background: none;
+			}
+		}
+
+		.pagination-centered{
+
+			ul{
+
+				li{
+					a{
+						@include font-family($web-font, 0.9em, $c2 $i);
+						letter-spacing: 0px;
+					}
+				}
+			}
+		}
+		.node{
+
+			
+		}
 	}
+
+	.slicer-full {
+			background: url("../images/divder.jpg");
+			width: 100%;
+			top: 0px;
+			height: 21px;
+			position: relative;
+			margin-bottom: 30px;	
+		}
 	.sidebar-second {
 			
 		.block{
@@ -282,15 +356,12 @@ body{
 				margin: 40px 0px 10px;
 				letter-spacing: 1px;
 				font-size: 1.1em;
+		}
 
-			&:after{
-				content: "_____";
-				font-size: 19px;
-				position: absolute;
-				left: 161px;
-				font-family: $body-font;
-				letter-spacing: 0px;
-			}
+		.liner{
+			height: 1px;
+			background: $c2;
+			width: 40px;
 		}
 
 		.views-field-body{
@@ -302,8 +373,18 @@ body{
 					padding: 10px;
 					letter-spacing: 1px;
 				}
+
+
 			}
 		}
+
+		.view-spotify{
+
+				iframe{
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+			}
 
 		.social{
 			padding-bottom: 15px;
@@ -363,7 +444,9 @@ body{
 							text-transform: uppercase;
 
 						}
-						.line{
+					}
+
+					.line{
 							color: #333 $i;
 							background-color: #9E9E9E;
 							height: 3px;
@@ -372,7 +455,6 @@ body{
 							position: relative;
 							top: -10px;
 							border: 0px;
-						}
 					}
 
 					.hover-content-title{
@@ -432,7 +514,10 @@ body{
 
 	.sub-menu {
 		border-bottom: 1px solid rgba(155, 155, 155, 0.92);
+		padding-bottom: 15px;
 	}
+
+
 
 	.title-area{
 
@@ -453,6 +538,7 @@ body{
 		section{
 			margin-left: auto;
 			margin-right: auto;
+			padding-bottom: 15px;
 
 			.menu{
 				list-style: outside none none;
@@ -472,7 +558,7 @@ body{
 
 
 						&:first-child{
-							margin-left: 9em;
+							margin-left: 12em;
 						}
 
 						a {
@@ -488,6 +574,19 @@ body{
 
 					}
 				}
+			}
+		}
+
+		.social{
+			text-align: center;
+			padding: 20px;
+
+			.icon{
+				padding-bottom: 15px;
+			}
+
+			a{
+				color: $c2;
 			}
 		}
 	}
@@ -511,5 +610,30 @@ body{
 			padding-right: 0px;
 		}
 	}
+
+	.inline{
+		list-style: none;
+	}
+}
+
+.node-article{
+
+	h1{
+		@include font-family($main-title-font, 1.9em , $c2 $i );
+		font-weight: normal;
+		text-transform: uppercase;
+		margin-bottom: 4px;
+	}
+	.posted{
+		margin-bottom: 30px;
+	}
+	
+	.field-name-field-image {
+
+		img{
+			width: 100%;
+		}
+	}
+	
 }
 

@@ -1,17 +1,11 @@
-<!--.page -->
-<div role="document" class="page">
-  <?php if (drupal_is_front_page() && isset($background)): ?>
-    <div class="page-background" style="background-image:<?php print 'url(' . $background . ')'; ?> "></div>  
-  <?php endif; ?>
-
-  <!--.l-header region -->
+ <!--.l-header region -->
   <header role="banner" class="l-header">
     <?php if ($top_bar): ?>
       <!--.top-bar -->
       <?php if ($top_bar_classes): ?>
       <div class="<?php print $top_bar_classes; ?>">
       <?php endif; ?>
-      <div class="test"></div>
+      <!-- <div class="test"></div> -->
         <nav class="top-bar"<?php print $top_bar_options; ?>>
           <ul class="title-area">
             <li class="name"><h1><?php print $linked_site_name; ?></h1></li>
@@ -83,9 +77,15 @@
     <?php endif; ?>
 
   </header>
-  <!--/.l-header -->
 
-  <?php if (!empty($page['featured'])): ?>
+<!--.page -->
+<div role="document" class="page">
+
+
+
+  <?php if (drupal_is_front_page() && isset($background)): ?>
+    <div class="page-background" style="background-image:<?php print 'url(' . $background . ')'; ?> ">
+          <?php if (!empty($page['featured']) || !drupal_is_front_page()): ?>
     <!--/.featured -->
     <section class="l-featured row">
       <div class="large-12 columns">
@@ -115,6 +115,15 @@
     <!--/.l-help -->
   <?php endif; ?>
 
+
+    </div>  
+  <?php endif; ?>
+
+ 
+  <!--/.l-header -->
+
+
+
   <main role="main" class="row l-main">
     <div class="<?php print $main_grid; ?> main columns">
       <?php if (!empty($page['highlighted'])): ?>
@@ -125,14 +134,6 @@
       <?php endif; ?>
 
       <a id="main-content"></a>
-
-      <?php if ($breadcrumb): print $breadcrumb; endif; ?>
-
-      <?php if ($title && !$is_front): ?>
-        <?php print render($title_prefix); ?>
-        <h1 id="page-title" class="title"><?php print $title; ?></h1>
-        <?php print render($title_suffix); ?>
-      <?php endif; ?>
 
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
@@ -155,10 +156,16 @@
       </aside>
     <?php endif; ?>
 
+    
     <?php if (!empty($page['sidebar_second'])): ?>
       <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
         <?php print render($page['sidebar_second']); ?>
       </aside>
+    <?php endif; ?>
+
+    <?php if(!$is_front): ?>
+      <?php hide($content['sidebar_second']); ?>
+      <?php print render($content); ?>
     <?php endif; ?>
   </main>
   <!--/.main-->
@@ -176,8 +183,9 @@
         <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/0.jpg');">
             <div class="hover-content">
               <div class="hover-content-cat">
-                  <span>Lorem</span><hr class="line">
+                  <span>Lorem</span>
                 </div>
+                <hr class="line">
                 <div class="hover-content-title column">
                   <h1> Lorem</h1>
                 </div>
@@ -189,8 +197,9 @@
         <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/1.jpg');">
             <div class="hover-content">
                 <div class="hover-content-cat">
-                  <span> Lorem</span><hr class="line">
+                  <span> Lorem</span>
                 </div>
+                <hr class="line">
                 <div class="hover-content-title column">
                   <h1> Lorem</h1>
                 </div>
@@ -202,8 +211,9 @@
         <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/2.jpg');">
                 <div class="hover-content">
                   <div class="hover-content-cat">
-                    <span>Lorem</span><hr class="line">
+                    <span>Lorem</span>
                   </div>
+                  <hr class="line">
                   <div class="hover-content-title column">
                     <h1>Lorem Ipsum delta asas as</h1>
                   </div>
@@ -215,8 +225,9 @@
         <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/3.jpg');">
                 <div class="hover-content">
                   <div class="hover-content-cat">
-                    <span> Lorem</span><hr class="line">
+                    <span> Lorem</span>
                   </div>
+                  <hr class="line">
                   <div class="hover-content-title column">
                     <h1> Lorem</h1>
                   </div>
@@ -228,8 +239,9 @@
         <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/4.jpg');">
           <div class="hover-content">
             <div class="hover-content-cat">
-              <span>Lorem 1<span><hr class="line">
+              <span>Lorem 1<span>
             </div>
+            <hr class="line">
             <div class="hover-content-title column">
               <h1>Lorem Ipsum delta asas as </h1>
             </div>
@@ -241,8 +253,9 @@
         <div class="small-12 large-4 columns hover-container" style="background: url('<?php print base_path() . path_to_theme() .'/' ?>images/blog/5.jpg');">
           <div class="hover-content">
             <div class="hover-content-cat">
-                  <span>Lorem </span><hr class="line">
+                  <span>Lorem </span>
                 </div>
+            <hr class="line">
             <div class="hover-content-title column">
               <h1> Lorem Ipsum delta asas as</h1>
             </div>
