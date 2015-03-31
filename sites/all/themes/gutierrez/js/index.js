@@ -17,6 +17,7 @@
             $(".test").hide();
             $(".top-bar").removeClass('open')
             $(".top-bar").css({"position": "absolute", "top": "0px"});
+             $(".not-front .top-bar").css({"position": "relative", "top": "0px"});
     
           }
         })
@@ -38,7 +39,9 @@
        $('.block-title').after('<center><div class="liner"></div></center>');
 
 
-       $('.l-main').after('<div class="row large-12"><div class="slicer-full"></div></div>');
+       $('.front .l-main').after('<div class="row large-12"><div class="slicer-full"></div></div>');
+
+       $('.no-sidebars .l-main').after('<div class="row large-12"><div class="slicer-full"></div></div>');
        //Add Twitter Icons
 
        $('.main .views-field-tweets').prepend('<span><img src="/sites/all/themes/gutierrez/images/twit.png"</span>');
@@ -47,8 +50,23 @@
 
        $('.main .views-field-fb-likes').prepend('<span><img src="/sites/all/themes/gutierrez/images/fb.png"</span>');
 
+
+       $(".toggle-topbar").click( function(){
+            $('.toggle').show();
+
+            $(this).find(".has-dropdown").click( function(){
+                 
+                $(".dropdown").show();
+
+            });
+
+          });
+
+
     
     }
   };
+
+
 
 })(jQuery);

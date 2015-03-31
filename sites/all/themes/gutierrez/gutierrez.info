@@ -89,6 +89,7 @@ regions[popular_post]        = Post
 regions[sub_menu]            = Sub menu
 regions[sidebar_first]       = Left Sidebar
 regions[sidebar_second]      = Right Sidebar
+regions[sidebar_ads]         = Right Sidebar Ads
 regions[triptych_first]      = Callout one
 regions[triptych_middle]     = Callout two
 regions[triptych_last]       = Callout three

@@ -75,13 +75,7 @@
  * @see template_process()
  */
 ?>
-<article style="margin-top: 10em;" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-
-<?php if ($title && !$is_front): ?>
-        <?php print render($title_prefix); ?>
-        <h1 id="page-title" class="title"><?php print $title; ?></h1>
-      <?php endif; ?>
-
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>

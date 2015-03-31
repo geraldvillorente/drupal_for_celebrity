@@ -69,18 +69,12 @@ body{
 body{
 	background: $c1;
 
-
-	.page-background {
-	  background-repeat: no-repeat;
-	  background-size: cover;
-	  background-attachment: fixed; 
-	  top: 0; 
-	  min-width: 100%;
-	  min-height: 100%;
-	  margin-bottom: 40px;
+	.toggle {
+		display: none;
 	}
+
 	.l-header{
-		
+
 		#main-menu{
 			
 			li{
@@ -89,9 +83,11 @@ body{
 					@include font-family($menu-font, 12px);
 					color: $c2;
                     text-transform: lowercase;
+                    white-space: normal $i;
 				}
 			}
 		}
+
 		.test {
 		    position: fixed;
 		    background: none repeat scroll 0% 0% #000;
@@ -115,9 +111,8 @@ body{
 		.top-bar {
 			background: $t;
             margin: 4em 6em;
-            position: absolute;
-			z-index: 999;
-			width: 80%;
+			z-index: 9;
+			width: 90%;
 			top: 0px;
 
 			.top-bar-section{
@@ -135,8 +130,22 @@ body{
                 
                 .dropdown {
                     border: 1px solid $c2;
-                    left: -60px $i;
-                    text-align: center;    
+                    text-align: center;
+					padding: 10px 0px 15px;
+					background-color: #FAFAFA;
+					text-align: left;
+					left: 20%;
+					margin-left: -90px;
+					border-radius: 2px;
+					width: 200px $i;
+
+						li{
+							text-align: center;
+
+							a{
+								
+							}
+						}
                 }
 
                 .dropdown:after {
@@ -157,8 +166,17 @@ body{
 				}
 			}
 		}
-		
-	}	
+	}
+	.page-background {
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	  background-attachment: fixed; 
+	  top: 0; 
+	  min-width: 100%;
+	  min-height: 100%;
+	  margin-bottom: 40px;
+	}
+	
 
 	.l-featured {
 		position: absolute;
@@ -180,9 +198,12 @@ body{
 					&:after{
 						content: "___________";
 						font-size: 16px;
-						position: absolute;
-						left: 140px;
-						top: 30px;
+						display: block;
+					    position: relative;
+					    margin-top: 0px;
+					    margin-bottom: 0px;
+					    margin-left: auto;
+					    margin-right: auto;
 						letter-spacing: 0px;
 					}	 
 				}
@@ -210,7 +231,7 @@ body{
 
 	.main {
 		 text-align: center;
-		
+
 		.views-row{
 			margin-bottom: 50px;
 		}
@@ -402,6 +423,34 @@ body{
 				color: $c2 $i;
 			}
 		}
+        .prefix{
+            border: none $i;
+        }
+        .block-newsletter {
+
+            form{
+                margin: 0px 30px 1em $i;
+                
+                .form-submit {
+                    background: $c2;
+                    border: 1px solid $c2;
+                }
+            }
+        }
+	}
+	.sidebar-third {
+
+		margin-top: 20px;
+
+		.block{
+			width: 350px;
+			text-align: center;
+			margin-bottom: -1px;
+
+			img{
+				margin-bottom: 10px;
+			}
+		}
 	}
 	
 	.post-article-container{
@@ -416,7 +465,7 @@ body{
 
 		.post-article {
 				text-align: center;
-				margin: 0px 10em $i;
+				margin: 0px 10em;
 				height: 200px;
 			
 			.hover-container{
@@ -451,10 +500,7 @@ body{
 							background-color: #9E9E9E;
 							height: 3px;
 							width: 28px;
-							left: 6em;
-							position: relative;
-							top: -10px;
-							border: 0px;
+						    margin: 10px auto 30px;
 					}
 
 					.hover-content-title{
@@ -615,6 +661,34 @@ body{
 		list-style: none;
 	}
 }
+.l-main{
+
+	  .category{
+	  	@include font-family($web-font, 0.8em , $c2 $i );
+	  	margin-bottom: 20px;
+	  	text-transform: uppercase;
+	  	letter-spacing: 2px;
+	  }
+
+     .title {
+            @include font-family($main-title-font, 1.9em , $c2 $i );
+            font-weight: normal;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+    .node-title{
+        @include font-family($main-title-font, 1em ,  $c2 $i );
+            font-weight: normal;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+
+        a{
+             color: $c2 $i;
+        }
+    }
+}
 
 .node-article{
 
@@ -625,7 +699,8 @@ body{
 		margin-bottom: 4px;
 	}
 	.posted{
-		margin-bottom: 30px;
+		margin-bottom: 35px;
+		font-size: 12px;
 	}
 	
 	.field-name-field-image {
@@ -637,3 +712,87 @@ body{
 	
 }
 
+.front{
+
+    #main-menu{
+    	
+    	li{
+    		
+    		a{
+    			@include font-family($menu-font, 12px);
+    			color: $c2;
+                text-transform: lowercase;
+    		}
+    	}
+    }
+
+		.test {
+		    position: fixed;
+		    background: none repeat scroll 0% 0% #000;
+		    z-index: 9;
+		    width: 100%;
+		    height: 50px;
+		    margin-top: 0px;
+		    display: none;
+		}
+
+		.open{
+			margin-top: -8px $i;
+			background: $c1 $i;
+			height: 63px;
+			width: 100% $i;
+			margin: 0px $i;
+			padding-top: 10px;
+			max-width: 100% $i;
+		}
+
+		.top-bar {
+			background: $t;
+            margin: 4em 6em;
+            position: absolute;
+			z-index: 999;
+			width: 80%;
+			top: 0px;
+
+			.top-bar-section{
+				
+				ul{
+					background: $t $i;
+
+					li {
+
+						a {
+						background: $t;
+						}
+					}
+				}
+                
+                .dropdown {
+                    border: 1px solid $c2;
+                    text-align: center;    
+                }
+
+                .dropdown:after {
+					content: ' ';
+					height: 0;
+					position: absolute;
+					width: 0;
+					border-left: 5px solid $t;
+					border-right: 5px solid $t;							
+					border-bottom: 5px solid black;
+					border-top-color: #333;
+					bottom: 100%;
+					left: 50%;
+				}
+
+                .has-dropdown > a{
+                    
+                }
+		
+				.has-dropdown > a:after {
+					display: none $i;
+				}
+			}
+		}
+		
+	}	
