@@ -9,7 +9,7 @@
         <nav class="top-bar"<?php print $top_bar_options; ?>>
           <ul class="title-area">
             <li class="name"><h1><?php print $linked_site_name; ?></h1></li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span><?php print $top_bar_menu_text; ?></span></a></li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
           </ul>
           <section class="top-bar-section right">
             <?php if ($top_bar_main_menu) :?>
@@ -18,7 +18,7 @@
             <?php if ($top_bar_secondary_menu) :?>
               <?php print $top_bar_secondary_menu; ?>
             <?php endif; ?>
-          </section>
+          </section>          
         </nav>
       <?php if ($top_bar_classes): ?>
       </div>
@@ -76,12 +76,20 @@
       <!--/.l-header-region -->
     <?php endif; ?>
 
+<div class="toggle">
+           <?php if ($top_bar_main_menu) :?>
+              <?php print $top_bar_main_menu; ?>
+            <?php endif; ?>
+             <?php if ($top_bar_secondary_menu) :?>
+              <?php print $top_bar_secondary_menu; ?>
+            <?php endif; ?>
+</div>
   </header>
+
+
 
 <!--.page -->
 <div role="document" class="page">
-
-
 
   <?php if (drupal_is_front_page() && isset($background)): ?>
     <div class="page-background" style="background-image:<?php print 'url(' . $background . ')'; ?> ">
@@ -125,6 +133,8 @@
 
 
   <main role="main" class="row l-main">
+
+
     <div class="<?php print $main_grid; ?> main columns">
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlight panel callout">
@@ -134,6 +144,19 @@
       <?php endif; ?>
 
       <a id="main-content"></a>
+
+     
+
+      <?php if ($title && !$is_front): ?>
+         <?php 
+            $tid = $node->field_categorisation['und'][0]['tid'];
+            $taxonomy_term = taxonomy_term_load($tid);
+        ?>
+        <span class="category"><?php print $taxonomy_term->name; ?></span>
+
+        <?php print render($title_prefix); ?>
+        <h1 id="page-title" class="title"><?php print $title; ?></h1>
+      <?php endif; ?>
 
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
@@ -160,6 +183,12 @@
     <?php if (!empty($page['sidebar_second'])): ?>
       <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
         <?php print render($page['sidebar_second']); ?>
+      </aside>
+    <?php endif; ?>
+
+    <?php if (!empty($page['sidebar_ads'])): ?>
+      <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-third columns sidebar">
+        <?php print render($page['sidebar_ads']); ?>
       </aside>
     <?php endif; ?>
 
