@@ -20,6 +20,11 @@
             <?php endif; ?>
           </section>          
         </nav>
+        <div class="toggle">
+           <?php if ($top_bar_main_menu) :?>
+              <?php print $top_bar_main_menu; ?>
+            <?php endif; ?>
+</div>
       <?php if ($top_bar_classes): ?>
       </div>
       <?php endif; ?>
@@ -76,14 +81,7 @@
       <!--/.l-header-region -->
     <?php endif; ?>
 
-<div class="toggle">
-           <?php if ($top_bar_main_menu) :?>
-              <?php print $top_bar_main_menu; ?>
-            <?php endif; ?>
-             <?php if ($top_bar_secondary_menu) :?>
-              <?php print $top_bar_secondary_menu; ?>
-            <?php endif; ?>
-</div>
+
   </header>
 
 
@@ -219,7 +217,7 @@
                   <h1> Lorem</h1>
                 </div>
                 <div class="hover-content-date">
-                  <span>Jan. 25, 2015</span>
+                  <span>January 25, 2015</span>
                 </div>
             </div>
         </div>
@@ -233,7 +231,7 @@
                   <h1> Lorem</h1>
                 </div>
                 <div class="hover-content-date">
-                  <span>Jan. 25, 2015</span>
+                  <span>January 25, 2015</span>
                 </div>
             </div>
         </div>
@@ -247,7 +245,7 @@
                     <h1>Lorem Ipsum delta asas as</h1>
                   </div>
                   <div class="hover-content-date">
-                    <span>Jan. 25, 2015</span>
+                    <span>January 25, 2015</span>
                   </div>
             </div>
         </div>
@@ -261,7 +259,7 @@
                     <h1> Lorem</h1>
                   </div>
                   <div class="hover-content-date">
-                    <span>Jan. 25, 2015</span>
+                    <span>January 25, 2015</span>
                   </div>
             </div>
         </div>
@@ -275,7 +273,7 @@
               <h1>Lorem Ipsum delta asas as </h1>
             </div>
             <div class="hover-content-date">
-              <span>Jan. 25, 2015</span>
+              <span>January 25, 2015</span>
             </div>
           </div>
         </div>
@@ -289,7 +287,7 @@
               <h1> Lorem Ipsum delta asas as</h1>
             </div>
             <div class="hover-content-date">
-              <span>Jan. 25, 2015</span>
+              <span>January 25, 2015</span>
             </div>
          </div>
         </div>
@@ -328,29 +326,29 @@
     <!--.footer-columns -->
     <section class="row l-footer-columns">
       <?php if (!empty($page['footer_firstcolumn'])): ?>
-        <div class="footer-first large-3 columns">
+        <div class="footer-first small-12 large-3 columns">
           <?php print render($page['footer_firstcolumn']); ?>
         </div>
       <?php endif; ?>
       <?php if (!empty($page['footer_secondcolumn'])): ?>
-        <div class="footer-second large-3 columns">
+        <div class="footer-second small-12 large-3 columns">
           <?php print render($page['footer_secondcolumn']); ?>
         </div>
       <?php endif; ?>
       <?php if (!empty($page['footer_thirdcolumn'])): ?>
-        <div class="footer-third large-3 columns">
+        <div class="footer-third small-12 large-3 columns">
           <?php print render($page['footer_thirdcolumn']); ?>
         </div>
       <?php endif; ?>
       <?php if (!empty($page['footer_fourthcolumn'])): ?>
-        <div class="footer-fourth large-3 columns">
+        <div class="footer-fourth small-12 large-3 columns">
           <?php print render($page['footer_fourthcolumn']); ?>
         </div>
       <?php endif; ?>
     </section>
     <!--/.footer-columns-->
   <?php endif; ?>
-
+<a href="#" class="scrollup">Scroll</a>
   <!--.l-footer-->
   <footer class="row l-footer panel" role="contentinfo">
    <!--  <?php if (!empty($page['footer'])): ?>
@@ -360,11 +358,11 @@
     <?php endif; ?> -->
 
     <?php if ($site_name) :?>
-      <div class="copyright large-6 left">
+      <div class="copyright small-12 large-6 left">
         &copy; <?php print t('All rights reserved.'). ' ' . date('Y') . ' ' . check_plain($site_name); ?>
       </div>
     <?php endif; ?>
-    <div class="developer large-6 right">
+    <div class="developer small-12 large-6 right">
         Developed & Designed By Globaledge Media Solutions Inc.
       </div>
   </footer>

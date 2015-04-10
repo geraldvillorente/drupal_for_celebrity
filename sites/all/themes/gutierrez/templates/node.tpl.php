@@ -90,7 +90,7 @@
      <?php print theme (). '  ' . str_replace('-', ' – ', format_date($node->created, 'custom', 'M j, Y')) ?>
     </div>
  
-
+    
   <?php
     // We hide the comments and links now so that we can render them later.
     hide($content['comments']);
