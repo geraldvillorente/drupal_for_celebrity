@@ -42,6 +42,7 @@
        $('.slicer-full').remove();
        $('.tweet').remove();
        $('.faceb').remove();
+       $('.marker').remove();
 
        $('.views-row').after('<div class="slicer"></div>');
        

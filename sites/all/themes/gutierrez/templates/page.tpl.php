@@ -363,7 +363,7 @@
       </div>
     <?php endif; ?>
     <div class="developer small-12 large-6 right">
-        Developed & Designed By Globaledge Media Solutions Inc.
+        <a href="http://globaledge-media.com">Developed & Designed By Globaledge Media Solutions Inc.</a>
       </div>
   </footer>
   <!--/.footer-->
