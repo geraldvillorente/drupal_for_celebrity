@@ -107,7 +107,12 @@
 
 		}
 	}
-
+	.main{
+		width:100% $i;
+	}
+	.sidebar-second{
+		width:100% $i;
+	}
 	.main .views-field-fb-likes, .main .views-field-tweets {
 		margin-left:2px $i;
 		width: 30% $i;

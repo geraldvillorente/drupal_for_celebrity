@@ -106,6 +106,13 @@ body{
 			margin: 0px $i;
 			padding-top: 10px;
 			max-width: 100% $i;
+
+			.title-area{
+						margin-left: 7em !important;
+					}	
+			.top-bar-section{
+				left: -60px !important;
+			}
 		}
 
 		.top-bar {
@@ -241,6 +248,7 @@ body{
 
 	.main {
 		 text-align: center;
+		 width: 65%;
 
 		.views-row{
 			margin-bottom: 50px;
@@ -304,6 +312,11 @@ body{
 					height: 15px;
 				}
 			}
+		}
+		.vcard{
+			padding: 0px;
+			margin:  0px;
+			border: none;
 		}
 
 		.views-field-fb-likes{
@@ -380,15 +393,25 @@ body{
 			margin-bottom: 30px;    
 		}
 	.sidebar-second {
-			
+			width: 33.33333%;
 		.block{
-			width: 350px;
+			width: 300px;
 			text-align: center;
 			border: 1px solid #000;
 			margin-bottom: -1px;
 		}
 		.block-views{
-
+		  .view-about {
+			.views-field-view-node{
+				width: 90%;
+				margin: auto;
+				padding: 10px;
+				 	a{
+				 		color: $c2 $i;
+				 		font-size: 11px;
+				 	}
+			}
+		}
 			
 		}
 		.block-title{
@@ -441,6 +464,7 @@ body{
 			}
 			a {
 				color: $c2 $i;
+				letter-spacing: 1px;
 			}
 		}
 		.prefix{
@@ -588,7 +612,7 @@ body{
 
 
 	.title-area{
-			margin-left: 50px $i;
+			margin-left: 2em $i;
 		.name{
 				
 			h1{
@@ -655,6 +679,9 @@ body{
 
 			a{
 				color: $c2 $i;
+				letter-spacing: 2px;
+				line-height: 15px;
+
 			}
 		}
 
@@ -704,6 +731,7 @@ body{
 	}
 }
 .l-main{
+	max-width: 80.5em $i;
 
 	  .category{
 		@include font-family($web-font, 0.8em , $c2 $i );
@@ -824,13 +852,17 @@ body{
 			padding-top: 10px;
 			max-width: 100% $i;
 				.top-bar {
+					.title-area{
+						margin-left: 7em !important;
+					}		
 					.top-bar-section{
 						.dropdown {
 							 background-color: $c1;
 						}
+					}
 				}
+
 			}
-		}
 
 		.top-bar {
 			background: $t;
@@ -841,7 +873,7 @@ body{
 			top: 0px;
 
 			.top-bar-section{
-				left:-100px $i;
+				left:-30px $i;
 				ul{
 					background: $t;
 
@@ -890,6 +922,16 @@ body{
 					background-color: $c1 $i;
 				}
 			}
+		}
+
+		.field-name-body{
+			margin-top: 20px;
+		}
+		.main{
+			width: 100%;
+		}
+		.l-main {
+			max-width: 62.5em !important;
 		}
 }
 .node-type-webform{
