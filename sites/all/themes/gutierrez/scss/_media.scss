@@ -141,6 +141,9 @@
 	.node-type-webform .webform-client-form .webform-component-textfield, .node-type-webform .webform-client-form .webform-component-email{
 		width: 100% $i;
 	}
+	.post-article-container .post-article .hover-container , .sidebar-third{
+		width: 100% $i;
+	}
 	.copyright, .developer{
 		padding-bottom: 10px;
 		text-align: center $i;
