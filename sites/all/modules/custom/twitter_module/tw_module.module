@@ -56,7 +56,7 @@ function tw_module_get_image($fid) {
 function tw_module_footer_content_block_view() {
 	$html = '';
 	$html .=
-		'<div class="social">
+		'<div class="social row">
 				<div class="icon"> '. gems_module_get_image('twitter_imagefield_fid') .' </div>
 				<a class="large-12 columns" href="'. variable_get('twitter_textfield') .'">richardguttierez</a>
 				<a class="large-12 columns" href="'. variable_get('twitter_textfield') .'">sarahlahbati</a>

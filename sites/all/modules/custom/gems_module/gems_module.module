@@ -106,22 +106,22 @@ function gems_module_footer_content_block_view() {
 		'<div class="tagline"><h2 class="block-title"> Where To Find Us</h2> </div>
 		 <div class="social-media-icons large-12">
 
-		 <div class="small-6 large-12 columns social">
+		 <div class="small-12 large-12 columns social">
 				<div class="icon"> '. gems_module_get_image('instagram_imagefield_fid') .' </div>
 				<a target="_blank" class="large-12 columns" href="'. variable_get('instagram_textfield') .'" >'. variable_get('instagram_textfield_label_1') .'</a>
 				<a target="_blank" class="large-12 columns" href="'. variable_get('instagram_textfield_2') .'">'. variable_get('instagram_textfield_label_2') .'</a>
 		</div>
-		<div class="small-6 large-12 columns social">
+		<div class="small-12 large-12 columns social">
 				<div class="icon"> '. gems_module_get_image('facebook_imagefield_fid') .' </div>
 				<a target="_blank" class="large-12 columns" href="'. variable_get('facebook_textfield') .'">'. variable_get('facebook_textfield_label_1') .'</a>
 				<a target="_blank" class="large-12 columns" href="'. variable_get('facebook_textfield_2') .'">'. variable_get('facebook_textfield_label_2') .'</a>
 		</div>
-		<div class="small-6 large-12 columns social">
+		<div class="small-12 large-12 columns social">
 				<div class="icon">  '. gems_module_get_image('twitter_imagefield_fid') .' </div>
 				<a target="_blank" class="large-12 columns" href="'. variable_get('twitter_textfield') .'">'. variable_get('twitter_textfield_label_1') .'</a>
 				<a target="_blank" class="large-12 columns" href="'. variable_get('twitter_textfield_2') .'">'. variable_get('twitter_textfield_label_2') .'</a>
 		</div>
-		<div class="small-6 large-12 columns social">
+		<div class="small-12 large-12 columns social">
 				<div class="icon"> '. gems_module_get_image('youtube_imagefield_fid') .' </div>
 				<a target="_blank" class="large-12 columns" href="'. variable_get('youtube_textfield') .'">'. variable_get('youtube_textfield_label_1') .'</a>
 		</div>

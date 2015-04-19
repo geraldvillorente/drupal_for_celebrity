@@ -107,7 +107,12 @@
 
 		}
 	}
-
+	.main{
+		width:100% $i;
+	}
+	.sidebar-second{
+		width:100% $i;
+	}
 	.main .views-field-fb-likes, .main .views-field-tweets {
 		margin-left:2px $i;
 		width: 30% $i;
@@ -116,8 +121,8 @@
 		width: 35% $i;
 	}
 	.top-bar .toggle-topbar.menu-icon {
-		right: 10px $i;
-		top: 63% $i;
+		right: 20px $i;
+		top: 55% $i;
 
 		a{
 			color: $c2;
@@ -134,6 +139,9 @@
 		top: 20px $i;
 	}
 	.node-type-webform .webform-client-form .webform-component-textfield, .node-type-webform .webform-client-form .webform-component-email{
+		width: 100% $i;
+	}
+	.post-article-container .post-article .hover-container , .sidebar-third{
 		width: 100% $i;
 	}
 	.copyright, .developer{

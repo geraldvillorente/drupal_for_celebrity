@@ -56,7 +56,7 @@ function ig_module_get_image($fid) {
 function ig_module_footer_content_block_view() {
 	$html = '';
 	$html .=
-		'<div class="social">
+		'<div class="social row">
 				<div class="icon"> '. gems_module_get_image('instagram_imagefield_fid') .' </div>
 				<a class="large-12 columns" href="'. variable_get('instagram_textfield') .'">richardguttierez</a>
 				<a class="large-12 columns" href="'. variable_get('instagram_textfield') .'">sarahlahbati</a>
